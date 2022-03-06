@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Order Products" icon-name="standard:contact" >
+        <template if:false={isActive}><lightning-button variant="Success" label="Activate"  onclick={activate} class="slds-m-left_x-small"> </lightning-button></template>
+        <div style="width: auto;">
+            <template if:true={data}>
+                <lightning-datatable data={data}
+                                     columns={columns}
+                                     key-field="id"
+                                     sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={doSorting}
+                                     hide-checkbox-column="true"></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>
